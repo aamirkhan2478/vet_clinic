@@ -1,7 +1,6 @@
-# curriculum-databases-projects-template
+# Vet Client
 
-> This template should be used for database related projects at Microverse.
-> Generate your own repository, update this README and edit all files content while working on projects. You should not be adding any new files unless asked otherwise.
+> In this project I manage database of pet clinic and perform some queries on them. 
 
 
 ## Getting Started
@@ -15,23 +14,17 @@ This repository includes files with plain SQL that can be used to recreate a dat
 
 ## Authors
 
-👤 **Author1**
+👤 **Aamir Khan**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@aamirkhan2478](https://github.com/aamirkhan2478)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/aamir-kh/)
 
-👤 **Author2**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
 
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](../../issues/).
+Feel free to check the [issues page](https://github.com/aamirkhan2478/vet_clinic/issues).
 
 ## Show your support
 
@@ -43,6 +36,3 @@ Give a ⭐️ if you like this project!
 - Inspiration
 - etc
 
-## 📝 License
-
-This project is [MIT](./MIT.md) licensed.
