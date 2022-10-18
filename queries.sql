@@ -53,7 +53,7 @@ SELECT count(*) AS total_animals FROM animals;
 SELECT count(*) AS never_tried_to_escape FROM animals WHERE escape_attempts = 0;
 
 -- What is the average weight of animals?
-SELECT AVG(weight_kg) AS average_weight FROM animals;
+SELECT CAST(AVG(weight_kg) AS DECIMAL(5,2)) AS average_weight FROM animals;
 
 -- Who escapes the most, neutered or not neutered animals?
 SELECT name, MAX(escape_attempts) AS most_escape FROM animals WHERE neutered = true OR neutered = false GROUP BY name ORDER BY MAX(escape_attempts) DESC;
@@ -61,6 +61,5 @@ SELECT name, MAX(escape_attempts) AS most_escape FROM animals WHERE neutered = t
 -- What is the minimum and maximum weight of each type of animal?
 SELECT MIN(weight_kg) AS min_weight, MAX(weight_kg) AS max_weight FROM animals;
 
-
 -- What is the average number of escape attempts per animal type of those born between 1990 and 2000?
-SELECT AVG(escape_attempts) AS average_escape_attempts FROM animals WHERE extract(YEAR FROM date_of_birth) BETWEEN '1990' AND '2000';
+SELECT CAST(AVG(escape_attempts) AS DECIMAL(5,2)) AS average_escape_attempts FROM animals WHERE extract(YEAR FROM date_of_birth) BETWEEN '1990' AND '2000';
