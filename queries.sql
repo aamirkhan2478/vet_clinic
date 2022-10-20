@@ -160,6 +160,22 @@ ON ve.id = vi.vet_id
 WHERE ve.name = 'Stephanie Mendez'
 GROUP BY ve.name;
 
+-- List all vets and their specialties, including vets with no specialties.
+SELECT 
+DISTINCT 
+ve.name AS vet_name,
+sp.name AS animal_type 
+FROM
+vets ve
+LEFT JOIN specializations spe
+on ve.id = spe.vet_id 
+LEFT JOIN animals an 
+on spe.species_id = an.species_id 
+LEFT JOIN species sp
+ON  an.species_id = sp.id 
+ORDER BY ve.name;
+
+
 -- List all animals that visited Stephanie Mendez between April 1st and August 30th, 2020.
 SELECT
 ve.name AS vet_name,
