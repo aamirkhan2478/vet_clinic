@@ -2,11 +2,14 @@
 DROP TABLE IF EXISTS animals;
 DROP TABLE IF EXISTS owners;
 DROP TABLE IF EXISTS species;
+DROP TABLE IF EXISTS vets;
+DROP TABLE IF EXISTS specializations;
+DROP TABLE IF EXISTS visits;
 
 CREATE TABLE IF NOT EXISTS owners (
     id SERIAL PRIMARY KEY NOT NULL,
     full_name VARCHAR(255) NOT NULL,
-    age NUMERIC NOT NULL
+    age NUMERIC
 );
 
 CREATE TABLE IF NOT EXISTS species (
@@ -54,3 +57,11 @@ CREATE TABLE IF NOT EXISTS visits(
   FOREIGN KEY (vet_id)
       REFERENCES vets (id)
 );
+
+-- Add an email column to your owners table
+ALTER TABLE owners ADD COLUMN email VARCHAR(120);
+
+-- Create indexes
+CREATE INDEX visist_index ON visits(animal_id ASC)
+
+CREATE INDEX owners_email ON owners(email ASC)
