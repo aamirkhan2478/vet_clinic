@@ -162,17 +162,14 @@ GROUP BY ve.name;
 
 -- List all vets and their specialties, including vets with no specialties.
 SELECT 
-DISTINCT 
 ve.name AS vet_name,
 sp.name AS animal_type 
 FROM
 vets ve
-LEFT JOIN specializations spe
-on ve.id = spe.vet_id 
-LEFT JOIN animals an 
-on spe.species_id = an.species_id 
-LEFT JOIN species sp
-ON  an.species_id = sp.id 
+LEFT JOIN specializations spe 
+ON ve.id = spe.vet_id
+LEFT JOIN species sp 
+ON spe.species_id = sp.id 
 ORDER BY ve.name;
 
 
@@ -269,3 +266,12 @@ ON ve.id = vi.vet_id
 WHERE ve.name = 'Maisy Smith' 
 GROUP BY ve.name, an.name
 ORDER BY an.name ASC LIMIT 1;
+
+
+-- Check data performance
+explain analyze SELECT COUNT(animal_id) FROM visits where animal_id = 4;
+
+explain analyze SELECT animal_id, vet_id, visit_date FROM visits where vet_id = 2;
+
+explain analyze SELECT full_name, age, email FROM owners where email = 'owner_18327@mail.com';
+
