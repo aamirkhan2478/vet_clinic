@@ -269,8 +269,9 @@ ORDER BY an.name ASC LIMIT 1;
 
 
 -- Check data performance
-explain analyze SELECT COUNT(*) FROM visits WHERE animal_id = 4;
+explain analyze SELECT COUNT(animal_id) FROM visits where animal_id = 4;
 
-explain analyze SELECT * FROM visits WHERE vet_id = 2;
+explain analyze SELECT animal_id, vet_id, visit_date FROM visits where vet_id = 2;
 
-explain analyze SELECT * FROM owners WHERE email = 'owner_18327@mail.com';
+explain analyze SELECT full_name, age, email FROM owners where email = 'owner_18327@mail.com';
+
